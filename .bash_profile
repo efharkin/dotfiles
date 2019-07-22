@@ -8,6 +8,16 @@ alias tree="tree -C"
 # Commands for versioning config files.
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
+
+#%% SETUP FOR SPECIFIC PROGRAMS
+
+# TexLive
+if [ -d /usr/local/texlive/2019 ]; then
+	export PATH="$PATH:/usr/local/texlive/2019/bin/x86_64-darwin"
+	#export MANPATH="$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man"
+	#export INFOPATH="$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info"
+fi
+
 # added by Miniconda3 4.6.14 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
