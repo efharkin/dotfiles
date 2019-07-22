@@ -1,0 +1,7 @@
+auto_update_conda: true
+
+create_default_packages:
+  - numpy
+  - matplotlib
+channels:
+  - defaults
