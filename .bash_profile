@@ -4,6 +4,7 @@ export PS1="\W $ "
 # Alias commands.
 alias ls="ls -G"
 alias tree="tree -C"
+alias grepy="grep -r --include \"*.py\""
 
 # Commands for versioning config files.
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
