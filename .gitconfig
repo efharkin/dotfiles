@@ -1,3 +1,7 @@
 [user]
 	name = Emerson Harkin
 	email = emerson.f.harkin@gmail.com
+[alias]
+	loga = "log --decorate --oneline --graph --all"
+[core]
+	pager = less -+FX
