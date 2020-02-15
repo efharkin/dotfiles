@@ -2,6 +2,8 @@
 	name = Emerson Harkin
 	email = emerson.f.harkin@gmail.com
 [alias]
-	loga = "log --decorate --oneline --graph --all"
+	loga = "log --decorate --oneline --graph --all --not --branches=\"*annex\""
 [core]
 	pager = less -+FX
+[advice]
+	statusHints = false
