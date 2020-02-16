@@ -101,9 +101,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.DS_Store']
 let g:python3_host_prog = '/miniconda3/envs/editors/bin/python'
 
 let $VIRTUAL_ENV = $CONDA_PREFIX
-let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 1
 let g:jedi#popup_on_dot = 0
-let g:jedi#completions_enabled = 1
+let g:jedi#completions_enabled = 0
 
 " Jupytext -- edit jupyter notebooks as markdown or script
 let g:jupytext_fmt = 'py'
