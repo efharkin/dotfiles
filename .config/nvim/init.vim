@@ -98,7 +98,7 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore = ['\.pyc$', '\.DS_Store']
 
 " Python completions.
-let g:python3_host_prog = '/usr/local/Cellar/python/3.7.4_1/bin/python3'
+let g:python3_host_prog = '/miniconda3/envs/editors/bin/python'
 
 let $VIRTUAL_ENV = $CONDA_PREFIX
 let g:deoplete#enable_at_startup = 0
