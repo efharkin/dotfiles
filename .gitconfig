@@ -7,3 +7,5 @@
 	pager = less -+FX
 [advice]
 	statusHints = false
+[diff "jupytext"]
+	textconv = jupytext --to script --output -
