@@ -68,12 +68,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'  " Distraction-free writing.
 Plug 'junegunn/limelight.vim'  " Emphasize paragraph with cursor.
 Plug 'dracula/vim'  " Dark colorscheme.
+Plug 'airblade/vim-rooter'  " Automatically cd to project root on file open.
 
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 Plug 'neovim/python-client'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
@@ -81,10 +84,12 @@ Plug 'davidhalter/jedi-vim'
 Plug 'goerz/jupytext.vim'  " Edit jupyter notebooks as markdown or script.
 Plug 'Raimondi/delimitMate'
 Plug 'tmhedberg/SimpylFold' " Python code folding
+Plug 'dense-analysis/ale'  " ALE for linting
+let g:ale_linters = {'rust': ['rls']}
 call plug#end()
 
 " Fuzzy finder
-"set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
 
 " Gitgutter
 let g:gitgutter_max_signs=9999
@@ -96,6 +101,9 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore = ['\.pyc$', '\.DS_Store']
+
+" General deoplete config
+set completeopt-=preview
 
 " Python completions.
 let g:python3_host_prog = '/miniconda3/envs/editors/bin/python'
