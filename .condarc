@@ -5,3 +5,4 @@ create_default_packages:
   - matplotlib
 channels:
   - defaults
+auto_activate_base: false
