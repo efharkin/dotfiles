@@ -1,0 +1,3 @@
+[submodule ".config/tmux/tmux-airline-dracula"]
+	path = .config/tmux/tmux-airline-dracula
+	url = https://github.com/efharkin/tmux-airline-dracula.git
