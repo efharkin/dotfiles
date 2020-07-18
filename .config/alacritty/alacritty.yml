@@ -80,7 +80,7 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   normal:
-    family: Source Code Pro for Powerline
+    family: SourceCodePro+Powerline+Awesome Regular
     style: Regular
 
   bold:

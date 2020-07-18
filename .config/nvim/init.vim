@@ -106,7 +106,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.DS_Store']
 set completeopt-=preview
 
 " Python completions.
-let g:python3_host_prog = '/miniconda3/envs/editors/bin/python'
+let g:python3_host_prog = '/opt/miniconda3/envs/editors/bin/python'
 
 let $VIRTUAL_ENV = $CONDA_PREFIX
 let g:deoplete#enable_at_startup = 1
