@@ -128,15 +128,22 @@ prompt_virtualenv() {
 }
 
 prompt_dir() {
+    # Get the path from home, root, or git repo to the working directory
     if [ -d .git ]; then
+        # If the current directory is the top level of a git repo,
+        # just add the name of the repo to the prompt and exit.
         prompt_segment blue $CURRENT_FG
         print -Pn "$(echo '\ue803' $(basename $(pwd)))"
         return 0
     elif $(git rev-parse > /dev/null 2>&1); then
+        # If we're in a git repo, get the path from the top of the repo to the
+        # working directory.
         local abs_path_=$(pwd)
         local git_toplevel="$(git rev-parse --show-toplevel)"
         local path_=${abs_path_#$git_toplevel}
     else
+        # If we aren't in a git repo, get the path from either root or home to
+        # the working directory.
         local abs_path_=$(pwd)
         local path_=${abs_path_#$HOME}
 
@@ -147,11 +154,13 @@ prompt_dir() {
         fi
     fi
 
+    # Shorten the path by truncating each directory (except the current one) to
+    # only one letter.
     local path_as_array=(${(s:/:)path_})
-    local num_path_inds=${#path_as_array[@]}
+    local length_of_path=${#path_as_array[@]}
     local shrunken_path=""
-    if [[ $num_path_inds != 0 ]]; then
-        for i in {1..$num_path_inds}; do
+    if [[ $length_of_path != 0 ]]; then
+        for i in {1..$length_of_path}; do
             if [[ $i != 1 || $git_toplevel ]]; then
                 shrunken_path+="/"
             fi
@@ -171,6 +180,7 @@ prompt_dir() {
         local shrunken_path=$(echo "\ue803 $(basename $git_toplevel)")$shrunken_path
     fi
 
+    # Draw the prompt
     prompt_segment blue $CURRENT_FG
     print -Pn "$shrunken_path"
 }
