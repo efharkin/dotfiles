@@ -103,14 +103,27 @@ alias fzp="fzf --preview='head -$LINES {}'"
 prompt_context() {}
 
 prompt_virtualenv() {
+  # Get the name of the virtual environment if one is active
   if [[ -n $VIRTUAL_ENV ]]; then
+    local env_label=" $(basename $VIRTUAL_ENV) "
+  fi
+
+  # Get the name of the Anaconda environment if one is active
+  if [[ -n $CONDA_PREFIX ]]; then
+    local conda_env_label="$(echo "\ue288" $(basename $CONDA_PREFIX))"
+
+    if [[ -n $env_label ]]; then
+      env_label+="+ $conda_env_label "
+    else
+      local env_label=" $conda_env_label "
+    fi
+  fi
+
+  # Draw prompt segment if a virtual/conda environment is active
+  if [[ -n $env_label ]]; then
     color=cyan
     prompt_segment $color $PRIMARY_FG
-    print -Pn " $(basename $VIRTUAL_ENV) "
-  elif [[ -n $CONDA_PREFIX ]]; then
-    color=cyan
-    prompt_segment $color $PRIMARY_FG
-    print -Pn "$(echo "\ue288" $(basename $CONDA_PREFIX))"
+    print -Pn $env_label
   fi
 }
 
