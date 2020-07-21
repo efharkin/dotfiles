@@ -164,7 +164,7 @@ prompt_dir() {
             if [[ $i != 1 || $git_toplevel ]]; then
                 shrunken_path+="/"
             fi
-            if [[ $i != $num_path_inds ]]; then
+            if [[ $i != $length_of_path ]]; then
                 local elem="$path_as_array[$i]"
                 shrunken_path+="${elem[0,1]}"
             else
