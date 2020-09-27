@@ -44,9 +44,16 @@ vnoremap kj <ESC>
 "noremap <C-k> <C-w>k
 "noremap <C-l> <C-w>l
 
+" Switching tabs
 nnoremap <TAB> gt
 nnoremap <S-TAB> gT
 
+" Copy to system clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+
+" Move up and down over visual lines
 nnoremap k gk
 nnoremap j gj
 
@@ -141,6 +148,7 @@ set guifont=Fira_Mono_for_Powerline_Medium:h18
 
 " Goyo
 function! s:goyo_enter()
+  call deoplete#toggle()
   if executable('tmux') && strlen($TMUX)
     silent !tmux set status off
     silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
@@ -151,6 +159,7 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
+  call deoplete#toggle()
   if executable('tmux') && strlen($TMUX)
     silent !tmux set status on
     silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
