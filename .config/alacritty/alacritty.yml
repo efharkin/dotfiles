@@ -87,11 +87,11 @@ font:
     style: Regular
 
   bold:
-    family: Source Code Pro for Powerline
+    family: Source Code Pro
     style: Bold
 
   italic:
-    family: Source Code Pro for Powerline
+    family: Source Code Pro
     style: Italic
 
   # Point size
