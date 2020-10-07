@@ -89,6 +89,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'goerz/jupytext.vim'  " Edit jupyter notebooks as markdown or script.
+Plug 'tweekmonster/impsort.vim'  " Sort python imports and highlight imported names
 Plug 'Raimondi/delimitMate'
 Plug 'tmhedberg/SimpylFold' " Python code folding
 Plug 'dense-analysis/ale'  " ALE for linting
@@ -139,7 +140,7 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '☰ '
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 
@@ -171,3 +172,9 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Debugging
+" Get the name of the syntax highlighting item under the cursor
+function! SyntaxItem()
+  echo synIDattr(synID(line("."),col("."),1),"name")
+endfunction
