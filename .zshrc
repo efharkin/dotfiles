@@ -110,7 +110,7 @@ prompt_virtualenv() {
 
   # Get the name of the Anaconda environment if one is active
   if [[ -n $CONDA_PREFIX ]]; then
-    local conda_env_label="$(echo "\ue288" $(basename $CONDA_PREFIX))"
+    local conda_env_label="$(echo "\ue606" $(basename $CONDA_PREFIX))"
 
     if [[ -n $env_label ]]; then
       env_label+="+ $conda_env_label "
@@ -133,7 +133,7 @@ prompt_dir() {
         # If the current directory is the top level of a git repo,
         # just add the name of the repo to the prompt and exit.
         prompt_segment blue $CURRENT_FG
-        print -Pn "$(echo '\ue803' $(basename $(pwd)))"
+        print -Pn "$(echo '\uf401' $(basename $(pwd)))"
         return 0
     elif $(git rev-parse > /dev/null 2>&1); then
         # If we're in a git repo, get the path from the top of the repo to the
@@ -177,7 +177,7 @@ prompt_dir() {
     if [[ $from_root ]]; then
         local shrunken_path="/"$shrunken_path
     elif [[ $git_toplevel ]]; then
-        local shrunken_path=$(echo "\ue803 $(basename $git_toplevel)")$shrunken_path
+        local shrunken_path=$(echo "\uf401 $(basename $git_toplevel)")$shrunken_path
     fi
 
     # Draw the prompt
