@@ -85,6 +85,10 @@ Plug 'ryanoasis/vim-devicons'  " Filetype icons from Nerd Font
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
