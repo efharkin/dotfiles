@@ -1,6 +1,6 @@
 [user]
 	name = Emerson Harkin
-	email = emerson.f.harkin@gmail.com
+	email = emerson@efharkin.com
 [alias]
 	loga = "log --decorate --oneline --graph --all --not --branches=\"*annex\""
 [core]
